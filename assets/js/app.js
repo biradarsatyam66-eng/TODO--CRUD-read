@@ -18,6 +18,8 @@ let todoArr =[
 ] 
 
 
+const todoform = document.getElementById('todoform');
+const todoitem = document.getElementById('todoitem');
 const todoList = document.getElementById('todoList');
 
 function displayTodo(arr){
@@ -42,12 +44,36 @@ displayTodo(todoArr);
 
 
 
+function ontodoSubmit(eve){
+	eve.preventDefault();
+	
+	let newtodo = {
+		todoItem : todoitem.value,
+		todoId : Date.now().toString(),
+	}
+	
+	todoArr.push(newtodo);
+	// displayarr(todoArr);
+	
+	
+	let li = document.createElement('li');
+	li.className = 'list-group-item d-flex justify-content-between'
+
+	li.innerHTML = `<strong>${newtodo.todoItem}</strong>
+							
+					<div>
+						<i class="fa-solid fa-pen-to-square text-primary fa-2x p-2" role="button"></i>
+						<i class="fa-solid fa-trash-can text-danger fa-2x p-2" role="button"></i>
+					</div>`
+	
+	todoform.reset();
+
+	todoList.append(li);
+};
 
 
 
 
 
 
-
-
-
+todoform.addEventListener('submit', ontodoSubmit);
