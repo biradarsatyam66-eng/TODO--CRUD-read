@@ -62,8 +62,8 @@ function ontodoSubmit(eve){
 	li.innerHTML = `<strong>${newtodo.todoItem}</strong>
 							
 					<div>
-						<i class="fa-solid fa-pen-to-square text-primary fa-2x p-2" role="button"></i>
-						<i class="fa-solid fa-trash-can text-danger fa-2x p-2" role="button"></i>
+						<i class="fa-solid fa-pen-to-square text-primary fa-2x" role="button"></i>
+						<i class="fa-solid fa-trash-can text-danger fa-2x" role="button"></i>
 					</div>`
 	
 	todoform.reset();
